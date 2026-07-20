@@ -1,53 +1,69 @@
 # 🤖 Multi-Agent AI Customer Support System
 
-An intelligent AI-powered customer support system built using **FastAPI, React, MongoDB, Google Gemini, Machine Learning, and a Multi-Agent Architecture**.
+An intelligent AI-powered customer support system built using **FastAPI, React, MongoDB Atlas, Google Gemini, and Machine Learning**.
 
-The system automatically understands customer queries, classifies their intent, and routes them to the most suitable specialized AI agent such as:
-
-- 📦 Order Support Agent
-- 💰 Refund Support Agent
-- 🛠️ Technical Support Agent
-- 🤖 General AI Support
-
-The application also provides secure authentication, persistent chat history, session management, user profiles, and an interactive modern chat interface.
+The system uses a **Multi-Agent Architecture** to automatically understand customer queries and route them to the appropriate specialized AI agent.
 
 ---
 
-## 🚀 Project Overview
+## 🚀 Overview
 
-Traditional customer support systems usually rely on a single chatbot or predefined rules.
+Traditional customer support systems usually rely on a single chatbot that handles every type of query.
 
-This project follows a **Multi-Agent AI Architecture** where different types of customer queries are intelligently routed to specialized agents.
+This project takes a different approach.
 
-### Example:
+It uses:
+
+- 🤖 Multiple specialized AI agents
+- 🧠 Machine Learning-based intent classification
+- 🔀 Intelligent query routing
+- 👤 User authentication
+- 💬 Persistent chat sessions
+- 🗄️ MongoDB Atlas database
+- ⚡ FastAPI backend
+- ⚛️ React frontend
+- ✨ Google Gemini AI
+
+The system analyzes every user query and decides which specialized agent should handle it.
+
+---
+
+## 🏗️ System Architecture
 
 ```text
-User Query
-    │
-    ▼
-Intent Detection
-    │
-    ▼
-┌─────────────────────────┐
-│   Router Agent          │
-└─────────────────────────┘
-    │
-    ├── Order Query
-    │       │
-    │       ▼
-    │   Order Agent
-    │
-    ├── Refund Query
-    │       │
-    │       ▼
-    │   Refund Agent
-    │
-    ├── Technical Query
-    │       │
-    │       ▼
-    │ Technical Support Agent
-    │
-    └── General Query
-            │
-            ▼
-       Gemini AI
+                    ┌─────────────────────┐
+                    │      React UI       │
+                    │      Frontend       │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │     FastAPI API     │
+                    │      Backend        │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │    Router Agent     │
+                    └──────────┬──────────┘
+                               │
+              ┌────────────────┼────────────────┐
+              │                │                │
+              ▼                ▼                ▼
+       ┌────────────┐   ┌────────────┐   ┌───────────────┐
+       │ Order Agent│   │Refund Agent│   │Technical Agent│
+       └─────┬──────┘   └─────┬──────┘   └───────┬───────┘
+             │                │                  │
+             └────────────────┼──────────────────┘
+                              │
+                              ▼
+                    ┌─────────────────────┐
+                    │    Google Gemini    │
+                    │      AI Model       │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │    MongoDB Atlas    │
+                    │ Users + Chats + Data│
+                    └─────────────────────┘
